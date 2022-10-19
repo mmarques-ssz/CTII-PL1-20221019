@@ -1,0 +1,69 @@
+<html>
+
+<head>
+ <title>Datas em JavaScript</title>
+</head>
+
+<body>
+    <script language="javascript">
+        var hoje, dia, mes, ano, inicio, fim, dias1, dias2;
+
+        hoje = new Date();
+        document.write("Data de hoje: " + hoje + "<br>");
+
+        dia = hoje.getDate();
+        mes = hoje.getMonth()+1;
+        ano = hoje.getFullYear();
+        document.write("Data de hoje: " + dia + "/" + mes + "/" + ano + "<br>");
+        document.write("Horas hoje: " + hoje.getHours() + "<br>");
+        document.write("Horas hoje UTC: " + hoje.getUTCHours() + "<br>");
+        document.write("Dia da semana: " + hoje.getDay() + "<br>");
+        switch (hoje.getDay())
+            {
+                case 0: document.write("Dom"); break;
+                case 1: document.write("Seg"); break;
+                case 2: document.write("Ter"); break;
+                case 3: document.write("Qua"); break;
+                case 4: document.write("Qui"); break;
+                case 5: document.write("Sex"); break;
+                case 6: document.write("Sab"); break;
+            }
+        document.write("<br>");
+
+        hoje.setDate(25);
+        document.write("Data de hoje: " + hoje + "<br>");
+
+        inicio = new Date(2022,0,1);
+        fim = new Date(2022,1,1);
+        fim.setDate(0);
+        document.write(inicio+"<br>");
+        document.write(fim+"<br><hr>");
+        dias1=inicio.getDate();
+        dias2=fim.getDate();
+        do
+        {
+            document.write(inicio.getDate() +"/" + inicio.getMonth()+1 +"/" + inicio.getFullYear() + " - ");
+            switch (inicio.getDay())
+            {
+                case 0: document.write("Dom"); break;
+                case 1: document.write("Seg"); break;
+                case 2: document.write("Ter"); break;
+                case 3: document.write("Qua"); break;
+                case 4: document.write("Qui"); break;
+                case 5: document.write("Sex"); break;
+                case 6: document.write("Sab"); break;
+            }
+            document.write("<br>");
+            dias1++;
+            inicio.setDate(inicio.getDate() + 1);
+        }
+        while (dias1<=dias2);
+
+
+
+
+    </script>
+
+</body>
+
+</html>
